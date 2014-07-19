@@ -219,3 +219,13 @@ footer {
 .more + span {
 	color: #c30;
 }
+
+table td, table thead th{
+	border: 1px solid black;
+	padding: 5px;
+}
+
+thead th {
+	background-color: #c30;
+	color: white;
+}
