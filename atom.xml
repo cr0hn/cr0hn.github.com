@@ -1,5 +1,0 @@
----
-layout: nil
-lang: en
----
-{% include atom_content.xml %}
