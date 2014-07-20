@@ -1,5 +1,4 @@
 title_en: cr0hn Personal blog
 permalink: /:categories/:year/:month/:day/:title
-markdown: maruku
 description_en: "Personal blog to write in it when I have head in the clouds."
 keywords_en: "hacking, security, python"
