@@ -18,7 +18,7 @@ def hello():
 
 def hello():
 	print("a test")
-{% endhighligth %}
+{% endhighlight %}
 
 ## A title h2
 
