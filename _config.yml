@@ -1,4 +1,5 @@
 title : cr0hn blog & portfolio
+tagline: Personal blog to write in it when I have head in the clouds
 markdown: rdiscount
 highlighter: pygments
 permalink: /:year/:month/:title.html
