@@ -13,9 +13,6 @@ active_tab: "articles"
 			<time date="{{ page.date }}">{{ page.date | date: "%B %d, %Y" }}</time>
 		  </a>
 		</li>
-		{% if page.tags %}
-		<li>Tagged: {{ page | tags }}</li>
-		{% endif %}
 	  </ul>
     </header>
     {{ content }}

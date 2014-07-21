@@ -1,5 +1,3 @@
 exclude: ['README.md']
 highlighter: true
-tag_page_layout: tag_page
-tag_page_dir: tags
 markdown: kramdown
