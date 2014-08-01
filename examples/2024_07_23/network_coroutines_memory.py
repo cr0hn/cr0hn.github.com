@@ -1,7 +1,9 @@
+import time
 import timeit
 import aiohttp
 import asyncio
 import urllib.error
+import memory_profiler
 import urllib.request as req
 
 from time import sleep
@@ -21,10 +23,9 @@ URLS = 0
 # --------------------------------------------------------------------------
 # Download for threads
 # --------------------------------------------------------------------------
-# @profile
+# @memory_profiler.profile
 def download_threads(url, sem_threads):
     try:
-        print(".")
         response = req.urlopen(url)
         data = response.read()
     except urllib.error.URLError:
@@ -35,7 +36,7 @@ def download_threads(url, sem_threads):
 # --------------------------------------------------------------------------
 # Threads
 # --------------------------------------------------------------------------
-# @profile
+@memory_profiler.profile
 def test_threads():
 
     sem_threads = Semaphore(CONCURRENCE)
@@ -56,7 +57,7 @@ def test_threads():
 # --------------------------------------------------------------------------
 # Processes
 # --------------------------------------------------------------------------
-# @profile
+# @memory_profiler.profile
 def download_processes(url):
     try:
         response = req.urlopen(url, )
@@ -66,7 +67,7 @@ def download_processes(url):
 
 
 # ----------------------------------------------------------------------
-# @profile
+@memory_profiler.profile
 def test_processes():
     mp = Pool(CONCURRENCE)
     mp.map(download_processes, URLS)
@@ -76,7 +77,7 @@ def test_processes():
 # Python 3 Coroutines
 # --------------------------------------------------------------------------
 @asyncio.coroutine
-# @profile
+# @memory_profiler.profile
 def download_coroutine(url, sem_coroutines):
     # conn = aiohttp.ProxyConnector(proxy=PROXY)
     with (yield from sem_coroutines):
@@ -90,37 +91,14 @@ def download_coroutine(url, sem_coroutines):
     # response = yield from aiohttp.request('GET', url)
     # data = (yield from response.read())
 
-@asyncio.coroutine
-# ----------------------------------------------------------------------
-def hh():
-    """Comment"""
-    print("sss")
-    return 1
-
 
 # ----------------------------------------------------------------------
-# @profile
+@memory_profiler.profile
 def test_coroutines():
-    # f = asyncio.wait([download_coroutine(page, sem_coroutines) for page in URLS])
+    sem_coroutines = asyncio.Semaphore(CONCURRENCE)
 
-    # sem_coroutines = asyncio.Semaphore(CONCURRENCE)
-    # loop = asyncio.get_event_loop()
-    # print(dir(loop))
-    # for x in dir(loop):
-    #     if "task" in x:
-    #         print(x)
-    # print(vars(loop))
-
-    loop = asyncio.get_event_loop()
-    for x in dir(asyncio):
-        print(x)
-    return
-    tasks = [
-        loop.create_task(hh()),
-    ]
-    loop.run_until_complete(asyncio.wait(tasks))
-    # tasks = [loop.create_task(download_coroutine(page, sem_coroutines)) for page in URLS]
-    # loop.run_until_complete(asyncio.wait(tasks))
+    f = asyncio.wait([download_coroutine(page, sem_coroutines) for page in URLS])
+    asyncio.get_event_loop().run_until_complete(f)
 
 # import urllib.request as req
 # PROXY = "http://172.31.219.30:8080"
@@ -133,46 +111,47 @@ def test_coroutines():
 # Time it!
 # --------------------------------------------------------------------------
 if __name__ == '__main__':
-    BASE_URL = [
-        # "http://www.bing.com/search?q=%s&go=&qs=n&form=QBLH&filt=all&pq=hello&sc=8-1&sp=-1&sk=&cvid=3c6b1fd5cbe0456b8c2370b57dc7ad38",
-        # "https://www.google.es/webhp?tab=ww&ei=AtXPU_ivMuyR1AWivIGIDg&ved=0CBAQ1S4#q=%s",
-        # "http://buscador.terra.es/Default.aspx?source=Search&ca=l&query=%s",
-        # "https://es.search.yahoo.com/search;_ylt=AnJ6euGJruAwoFqdrV3z9Npdoq5_?p=%s&toggle=1&cop=mss&ei=UTF-8&fr=yfp-t-907&fp=1"
-        # "http://www.navajanegra.com/%s"
-        # "http://golismero.com/%s",
-        "https://www.youtube.com/results?search_query=%s"
-        # "http://127.0.0.1:8000/index.html"
-    ]
-    # BASE_URL_LEN = len(BASE_URL)
-
-
     testing_cases = {
         "Python 3 coroutines": "test_coroutines",
-        # "Threads": "test_threads",
+        "Threads": "test_threads",
         # "Processes": "test_processes",
     }
 
     print("[*] Starting test")
-    # for requests in [50, 100, 200]:
+    # for requests in [50, 100]:
     for requests in [50]:
+
+        BASE_URL = {
+            'small': ['https://www.google.es/webhp?tab=ww&ei=AtXPU_ivMuyR1AWivIGIDg&ved=0CBAQ1S4#q=%s' % w for w in range(requests)],
+            # 'middle': ['http://upload.wikimedia.org/wikipedia/commons/3/37/African_Bush_Elephant.jpg' for w in range(requests)],
+            # 'heavy': ['http://cdimage.debian.org/debian-cd/7.6.0/amd64/iso-cd/debian-7.6.0-amd64-netinst.iso' for w in range(requests)]
+        }
+
         print(" " * 3, "- Requesting %s URLs:" % requests)
 
-        # for i, concurrence in enumerate([5, 10, 15]):
         for i, concurrence in enumerate([5, 15]):
-            print(" " * 5, "+ concurrence %s:" % concurrence)
-
-            # URLS = [BASE_URL[randint(0, BASE_URL_LEN - 1)] % w for w in range(requests)]
-            URLS = [BASE_URL[0] for w in range(requests)]
-
             CONCURRENCE = concurrence
-            # URLS = ["http://upload.wikimedia.org/wikipedia/commons/3/37/African_Bush_Elephant.jpg"
-            #         for w in range(requests)]
 
-            for case_name, case_function in testing_cases.items():
-                # print(case_name, globals()[case_function]())
-                print(" " * 8, "> ", case_name,  "time: ",
-                      timeit.timeit("%s()" % case_function, setup="from __main__ import %s" % case_function, number=1),
-                      "seconds")
-                # sleep(1)
+            print(" " * 5, "+ concurrence %s:" % CONCURRENCE)
+
+            for base_url_name, base_url in BASE_URL.items():
+                URLS = base_url
+                print(" " * 8, "file size:", base_url_name)
+                for case_name, case_function in testing_cases.items():
+                    # print(case_function)
+                    start = time.time()
+                    # p = memory_profiler.memory_usage((globals()["%s" % case_function], (), {}))
+                    p = memory_profiler.memory_usage(globals()["%s" % case_function], retval=True, stream=None)
+                    # print(p)
+
+                    # print(globals()["%s" % case_function]())
+                    end = time.time()
+
+                    # print(end - start)
+                    # p = memory_profiler.memory_usage((globals()["%s" % case_function](),))
+                    # print(p)
+                    # print(" " * 10, "> ", case_name,  "time: ",
+                    #       timeit.timeit("%s()" % case_function, setup="from __main__ import %s" % case_function, number=1),
+                    #       "seconds")
 
     print("[*] Tests end")
