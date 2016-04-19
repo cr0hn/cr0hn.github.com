@@ -229,3 +229,7 @@ thead th {
 	background-color: #c30;
 	color: white;
 }
+
+.full strong {
+  font-family: sans-serif;
+}

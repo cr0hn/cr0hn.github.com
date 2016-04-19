@@ -7,19 +7,19 @@ layout: post
 
 This is the first of a serie of posts about the new Python 3.4 building library **AsyncIO**, in comparation of traditional Threads or Processes methods.
 
-The purpose of this post series is to compare the performance, usability and advantages/disadvantes of each one solution.
+The purpose of this post series is to compare the performance, usability and advantages/disadvantages of each one solution.
 
-Thoses are post that will be published:
+These are post that will be published:
 
 1. **Web content connections**
 2. Data base access
-3. Slow taskes
-4. Disc acceses
+3. Slow tasks
+4. Disc access
 
 
 # Brief summary: Advantages and disadvantages of each method
 
-The following table contains basic comparation between the three methods:
+The following table contains basic comparison between the three methods:
 
 <table>
 	<thead>
