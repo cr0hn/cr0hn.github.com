@@ -1,5 +1,5 @@
 ---
-title: Ocultando información en sitios curiosos - I
+title: Ocultando informaci&oacute;n en sitios curiosos - I
 layout: post
 ---
 
