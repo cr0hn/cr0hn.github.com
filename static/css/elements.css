@@ -233,3 +233,15 @@ thead th {
 .full strong {
   font-family: sans-serif;
 }
+
+article p {
+  padding-bottom: 10px;
+  margin-bottom: 0px;
+  text-align: justify;
+}
+
+article h1 {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-top: 0px;
+}
