@@ -3,8 +3,6 @@ title: Ocultando información en sitios curiosos - I
 layout: post
 ---
 
-# Ocultando información en sitios curiosos (I)
-
 Tras mucho tiempo me he propuesto tratar de coger la costumbre de escribir alguna entrada de forma regular. Contando mis locuras e investigaciones, dadas por la falta de sueño :)
 
 Así que... A empezar!
