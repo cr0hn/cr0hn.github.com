@@ -12,9 +12,9 @@ El índice del curso completo lo podéis consultar en la web de Securizame:
 
 Para los que os queráis introducir en el mundo de Python, seguro que nos os vendría nada mal alguien que os echara una mano y os guiará en el aprendizaje, verdad? :)
 
-Os recomiendo que, le echéis un ojo al índice. Una vez que lo veáis... No tendré que deciros nada más. **Os convenceréis solos** :)
+Os recomiendo que le echéis un ojo al índice. Una vez que lo veáis... No tendré que deciros nada más. **Os convenceréis sol@s** :)
 
-# Curso de Python avanzando 
+# Curso de Python avanzado 
 Como os comentaba, la parte que me toca va a ser la parte más avanzada. En que va a consistir? Principalmente se va a centrar en 3 puntos:
 -  Estructuración y gestión eficiente de proyectos.
 -  Mejora e incremento de rendimiento
@@ -41,7 +41,7 @@ Efectivamente, la librería existe. Pero, es una de las grandes "mentirijillas" 
 
 A modo de culturilla: 
 
-Cuando Guido van Rossum (creador de Python) ideó y diseño Python, tenía muy clara una cosa: tenía que sé muy simple. **No solo el lenguaje, también el intérprete**.
+Cuando Guido van Rossum (creador de Python) ideó y diseño Python, tenía muy clara una cosa: tenía que ser muy simple. **No solo el lenguaje, también el intérprete**.
 
 Con esta idea en la cabeza, creó el intérprete sin soporte para hilos.  Pero, con los años, los años los programadores reclamaban más y más el soporte de hilos.
 
@@ -153,7 +153,7 @@ Ostras! la ejecución **SIN hilos has sido más rápida!**. Pero... Por qué? Si
 1. Como ya sabemos, Python simula la concurrencia, 
 2. Python intercambia la ejecución de los hilos para que solo se ejecute 1 a la vez,
 3. Este cambio de contexto, en determinadas situaciones, es más costoso que el trabajo en si que va a realzar el propio hilo. 
-4. Por lo tanto: **la solución mono-hilo es más rápida porque no gasta tiempo en los cambios de contexto y porque el trabajo a realizar por cada hielo es menos costos que el cambio de contexto**
+4. Por lo tanto: **la solución mono-hilo es más rápida porque no gasta tiempo en los cambios de contexto y porque el trabajo a realizar por cada hilo es menos costos que el cambio de contexto**
 
 Para los expertos de Python que leáis esto: se que me dejó muchos detalles y que es una explicación muy simplificada :)
 
@@ -162,4 +162,4 @@ El mundo de la concurrencia y paralelismo, en cualquier lenguaje de programació
 
 En el siguiente POST os contaré más cosillas del mundo oscuro de la concurrencia en Python.
 
-**Nos vemos el el 17 de Junio en Securizame!**
+**Nos vemos en Junio en Securizame!**
