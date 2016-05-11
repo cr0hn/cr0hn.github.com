@@ -245,3 +245,19 @@ article h1 {
   padding-bottom: 0px;
   margin-top: 0px;
 }
+
+article.full > header > h1 {
+	border-right: solid 4px #be1f04;
+	padding-right: 10px;
+}
+article h1, section > h1, article.full > header > h1 {
+  border-left: solid 4px #be1f04;
+  padding-left: 10px;
+}
+
+article h2 {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-size: 22px;
+	border-bottom: solid 1px #be1f04;
+}
