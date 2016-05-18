@@ -26,7 +26,7 @@ Cuando una atacante se conecte a nuestro servidor web, **le haremos pensar que e
 Es decir: cambiaremos el banner de nuestro servidor web por otro.
 Qué tonto verdad? Sí, lo es, pero veréis que efectivo resulta.
 
-# Como lo hacemos?
+# Cómo lo hacemos?
 
 En el caso que nos aplica lo vamos a ver con el **servidor web Nginx**, por ser mi preferido, pero podéis trasladar el concepto a cualquier otro. Manos a la obra!
 
