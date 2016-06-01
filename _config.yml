@@ -6,4 +6,4 @@ markdown: redcarpet
 permalink: pretty
 
 redcarpet:
-  extensions: ["tables", "autolink"]
+  extensions: ["tables", "autolink", "markdown"]

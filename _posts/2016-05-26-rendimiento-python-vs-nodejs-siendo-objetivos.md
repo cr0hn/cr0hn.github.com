@@ -86,6 +86,8 @@ if __name__ == '__main__':
     main()
 ```
 
+Enlace al código: https://github.com/cr0hn/cr0hn.github.com/blob/master/examples/2016-06-01-rendimiento-python-vs-nodejs-siendo-objetivos/python/app.py
+
 **NodeJS**
 
 ```javascript
@@ -121,6 +123,8 @@ app.listen(PORT, backlog=5000);
 
 console.log('Running on http://localhost:' + PORT);
 ```
+
+Enlace al código: https://github.com/cr0hn/cr0hn.github.com/blob/master/examples/2016-06-01-rendimiento-python-vs-nodejs-siendo-objetivos/nodejs/app.js
 
 **Nota**: Para hacer las pruebas correctamente tendremos que ajustas las propiedades del kernel de nuestro sistema, a fin de incrementar los valores por defecto y ser capaces de atender más conexiones que las que vienen configuradas. Aquí podéis encontrar los comandos a ejecutar:
 
