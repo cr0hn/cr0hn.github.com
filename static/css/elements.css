@@ -220,13 +220,23 @@ footer {
 	color: #c30;
 }
 
+table {
+	width: 60%;
+	margin: 0 auto;
+	margin-bottom: 15px;
+}
+
+table, table th {
+	text-align: center;
+}
+
 table td, table thead th{
 	border: 1px solid black;
 	padding: 5px;
 }
 
 thead th {
-	background-color: #c30;
+	background-color: #b00900;
 	color: white;
 }
 

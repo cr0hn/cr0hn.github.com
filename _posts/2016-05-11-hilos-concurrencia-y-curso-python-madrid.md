@@ -16,6 +16,7 @@ Os recomiendo que le echéis un ojo al índice. Una vez que lo veáis... No tend
 
 # Curso de Python avanzado 
 Como os comentaba, la parte que me toca va a ser la parte más avanzada. En que va a consistir? Principalmente se va a centrar en 3 puntos:
+
 -  Estructuración y gestión eficiente de proyectos.
 -  Mejora e incremento de rendimiento
 -  Concurrencia y distribución de carga
