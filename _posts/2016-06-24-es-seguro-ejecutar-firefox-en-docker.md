@@ -5,7 +5,7 @@ layout: post
 
 Una vez más, estoy de vuelta listo para dar *guerra*. Si bien es cierto que llevo 2 post de retraso (por aquello de 1 post a la semana), tampoco quiero escribir por escribir, y no hablar sobre lo que ya se haya escrito hasta la saciedad.
 
-Esta vez **os voy a contar** una paja mental que me lleva rondando por la cabeza desde hacía tiempo pero no había tenido tiempo para probar: **Ejecutar Firefox en Docker**. Cuando digo *Firefox*, lease una app de escritorio cualquiera.
+Esta vez **os voy a contar** una paja mental que me lleva rondando por la cabeza desde hacía tiempo pero no había tenido tiempo para probar: **Ejecutar Firefox en Docker**. Cuando digo *Firefox*, léase una app de escritorio cualquiera.
 
 Tras buscar por el *interé blanco*, he podido entrar información de como hacerlo pero... **cómo de seguro es ejecutar Firefox (o una app cualquiera) sobre Docker**.
 
@@ -13,14 +13,14 @@ Pues venga, vamos al lío...
 
 # Por qué ejecutar Firefox en Docker?
 
-Según lo veo yo, existen **2 motivos** por los que querríamos **ejecutar una App** de escritorio (Firefox en este caso) dentro de un contendor de **Docker**:
+Según lo veo yo, existen **2 motivos** por los que querríamos **ejecutar una App** de escritorio (Firefox en este caso) dentro de un contenedor de **Docker**:
 
 - **Aislamiento de dependencias y portabilidad**: una de las principales ventajas que tiene Docker.
-- **Seguridad**: Docker crea un contendor para la app que queramos correr, creando una capa de abstracción y aisándolo del sistema operativo.
+- **Seguridad**: Docker crea un contenedor para la app que queramos correr, creando una capa de abstracción y aislándolo del sistema operativo.
  
 Nosotros vamos a centrarnos en la segunda opción. Según la filosofía y funcionamiento de Docker, **por qué podría ser buena idea correr Firefox en Docker?**
 
-Seguro que sabéis perfectamente que todos los navegadores web tienen vulnerabilidades. Por mucho que los mantegamos actualizados, los *[0 day](https://es.wikipedia.org/wiki/Ataque_de_d%C3%ADa_cero)* siempre estarán ahí. Bajo esta premisa, es una buena idea ejecutar el navegador en un entorno de *sandbox* lo más aislado posible del sistema operativo *nativo* . Es decir: **si nos revientan el Firefox, que no puedan acceder al sistema operativo**. Algo muy parecido a lo que hace *[Sandboxie](http://www.sandboxie.com)*.
+Seguro que sabéis perfectamente que todos los navegadores web tienen vulnerabilidades. Por mucho que los mantengamos actualizados, los *[0 day](https://es.wikipedia.org/wiki/Ataque_de_d%C3%ADa_cero)* siempre estarán ahí. Bajo esta premisa, es una buena idea ejecutar el navegador en un entorno de *sandbox* lo más aislado posible del sistema operativo *nativo* . Es decir: **si nos revientan el Firefox, que no puedan acceder al sistema operativo**. Algo muy parecido a lo que hace *[Sandboxie](http://www.sandboxie.com)*.
 
 # Cuál es nuestro objetivo?
 
@@ -49,7 +49,7 @@ Pasos que seguiremos:
 
 1. Creación de URL vulnerable con el exploit para Firefox 17, usando metasploit (la máquina Kali).
 2. Creación y ejecución Firefox 17 con Docker, en el Docker-host (la máquina Ubuntu).
-3. Visitaremos la URL vulnerable, con el Firefox 17 a fin de explotar la vulnerabildad del Firefox.
+3. Visitaremos la URL vulnerable, con el Firefox 17 a fin de explotar la vulnerabilidad del Firefox.
 4. Una vez esplotado el fallo, trataremos de ejecutar comandos en el Docker.
 5. Trataremos de ejecutar comandos en sistema operativo base. Es decir: **Fuera del contenedor del Docker**.
 
@@ -57,7 +57,7 @@ Pasos que seguiremos:
 
 ## Creación de la URL vulnerable
 
-Vamos con un poco de metasploit: **Tras actualizar metasploit** (comando: `msfupdate`) para segurarnos que tenemos los últimos exploits, ejecutaremos el msfconsole:
+Vamos con un poco de metasploit: **Tras actualizar metasploit** (comando: `msfupdate`) para asegurarnos que tenemos los últimos exploits, ejecutaremos el msfconsole:
 
 ```bash
 
@@ -130,7 +130,7 @@ References:
   http://cvedetails.com/cve/2013-1710/
 ```
 
-Si observamos la salida salida el comando `show info`, en **la descripción, nos indica que dicho exploit** está disonible para las versiones de **Firefox 15-22**. De ahí que la version elegida de Firefox sea la 17.
+Si observamos la salida salida el comando `show info`, en **la descripción, nos indica que dicho exploit** está disponible para las versiones de **Firefox 15-22**. De ahí que la versión elegida de Firefox sea la 17.
 
 Seleccionamos ahora el **payload** a ejecutar tras la explotación del fallo. En nuestro caso lo que queremos es una shell, así que seleccionaremos el payload `firefox/shell_reverse_tcp`:
 
@@ -185,9 +185,9 @@ Como ya os he comentado, ya hay gente que se ha currado estas cosas. Por ejemplo
 De este repositorio de Docker nos interesan 2 cosas:
 
 - **Cómo crear el Docker**: El comando no es precisamente trivial. Veremos después el porqué. 
-- **Modifcar el Docker**: Tendremos que modificar el contenedor original para que se ejecute la versión de Firefox vulnerable, en lugar de la que viene pre-instalada. 
+- **Modificar el Docker**: Tendremos que modificar el contenedor original para que se ejecute la versión de Firefox vulnerable, en lugar de la que viene pre-instalada. 
 
-Antes de nada, **tendremos que haber descargado y descomprimido el Firefox 17** y dejarlo en una ubicación en la que el **Docker-host tenga acceso**. Para hacerlo un poco más dinámico, he usado la varible de BASH `FIREFOX` de modo que no tengamos que cambiar el comando, sino solamente esa variable.
+Antes de nada, **tendremos que haber descargado y descomprimido el Firefox 17** y dejarlo en una ubicación en la que el **Docker-host tenga acceso**. Para hacerlo un poco más dinámico, he usado la variable de BASH `FIREFOX` de modo que no tengamos que cambiar el comando, sino solamente esa variable.
 
 Una vez tengamos claro esto, vamos a crear el Docker usando la imagen del autor. Para hacerlo ejecutaremos en el docker-host (Ubuntu) lo siguiente:
 
@@ -212,11 +212,11 @@ Antes de continuar vamos a ver qué estamos haciendo con cada parámetro:
 Por qué necesitamos montar:
 
 - `/tmp/.X11-unix`: Porque sino no tendremos acceso al X11 de Linux, y no podremos acceder al sistema de ventanas.
-- `/dev/snd`: Porque sino no tendremos acceso al sonido del sistema, y puesto que queremos un Firefox completo (que reproduza el sonido de los videos, por ejemplo) es necesario. 
+- `/dev/snd`: Porque sino no tendremos acceso al sonido del sistema, y puesto que queremos un Firefox completo (que reproduzca el sonido de los videos, por ejemplo) es necesario. 
 
 **NOTA**: El procedimiento que voy a explicar se puede hacer de forma más elegante creando nuestro propio Dockerfile, pero dado que es una prueba de concepto, esta forma me ha resultado más rápida.
 
-En este punto ya deberíamos tener un Firefox corriendo. La pega es que **no es vulnerable**, así que vamos a cambiar el firefox que el contenedor lanza por el que hemos descargado. Lo que vamos a hacer es entrar al docker y cambiar el punto de entrada. Para eso haremos lo siguiente:
+En este punto ya deberíamos tener un Firefox corriendo. La pega es que **no es vulnerable**, así que vamos a cambiar el Firefox que el contenedor lanza por el que hemos descargado. Lo que vamos a hacer es entrar al docker y cambiar el punto de entrada. Para eso haremos lo siguiente:
 
 **Acceder al contenedor en ejecución** 
 
