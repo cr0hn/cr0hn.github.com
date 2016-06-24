@@ -263,7 +263,7 @@ Et voìla! Ya lo tenemos todo listo! Cómo lo comprobamos? Fácil: Ya puedes cer
 
 Y por fin, si accedemos al navegador e indicamos la URL `about:config`, podréis ver que **la versión que está corriendo es la que 17**:
 
-![firefox 17](/examples/2016-06-24-es-seguro-ejecutar-firefox-en-docker/firefox-17.jpg =400x)
+![firefox 17](/examples/2016-06-24-es-seguro-ejecutar-firefox-en-docker/firefox-17.jpg)
 
 
 # Conclusión y próxima entrega
