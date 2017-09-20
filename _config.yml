@@ -2,7 +2,6 @@ url: "http://cr0hn.com"
 
 
 # Build settings
-#markdown: redcarpet
 markdown: kramdown
 permalink: pretty
 highlighter: rouge
