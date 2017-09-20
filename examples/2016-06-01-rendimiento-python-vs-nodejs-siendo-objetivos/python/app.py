@@ -18,7 +18,7 @@ def home(request):
 
 @asyncio.coroutine
 def json_path(request):
-    return web.json_response({"test": 1, "data": "hello world" })
+    return web.json_response({"test": 1, "data": "hello world"})
 
 
 def main():

