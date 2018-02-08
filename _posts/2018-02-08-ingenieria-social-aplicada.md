@@ -7,7 +7,7 @@ Hoy he vuelto a impartir la charla **"Ingeniería social aplicada - Mucho más f
 
 Tras dar esta charla varias veces me ha llama la atención el que haya suscitado más interés que otras charlas anteriores mucho más técnicas y con mucho más trabajo técnico a sus espaldas. Bueno, supongo que la conclusión es sencilla: es un tema fácilmente entendible por todos y muy vistoso. 
 
-Quería usar este post para dejar una referencia a la presentación, [Que podéis encontrar aquí](https://www.slideshare.net/cr0hn/ingeniera-social-aplicada-mucho-ms-fcil-de-lo-que-parece), y daros el listado completo del resumen que me hice en su día del libro de *Dale Carnigie* del que hablo en la charla.
+Quería usar este post para dejar una referencia a la presentación, [Que podéis encontrar aquí](https://www.slideshare.net/cr0hn/ingenieria-social-aplicada-mucho-mas-fcil-de-lo-que-parece), y daros el listado completo del resumen que me hice en su día del libro de *Dale Carnigie* del que hablo en la charla.
 
 Tal y como he comentado, estas reglas hay que tomarlas con cuidado y **no usarlas al pie de la letra, ya que muchas de ellas son de dudosa ética, rozando incluso el maltrato psicológico** (o, al menos, así lo veo yo).
 
