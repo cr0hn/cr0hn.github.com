@@ -3,7 +3,7 @@ title: Ingeniería social aplicada
 layout: post
 ---
 
-Hoy he vuelto a impartir la **"Ingeniería social aplicada - Mucho más fácil de lo que parece"** en [Google Campus Madrid](https://www.meetup.com/es-ES/HackMadrid-27/events/246651287/).
+Hoy he vuelto a impartir la charla **"Ingeniería social aplicada - Mucho más fácil de lo que parece"** en [Google Campus Madrid](https://www.meetup.com/es-ES/HackMadrid-27/events/246651287/).
 
 Tras dar esta charla varias veces me ha llama la atención el que haya suscitado más interés que otras charlas anteriores mucho más técnicas y con mucho más trabajo técnico a sus espaldas. Bueno, supongo que la conclusión es sencilla: es un tema fácilmente entendible por todos y muy vistoso. 
 
