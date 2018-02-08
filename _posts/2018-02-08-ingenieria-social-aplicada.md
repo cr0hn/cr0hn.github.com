@@ -1,5 +1,5 @@
 ---
-title: Ingeniería social aplicada
+title: Ingeniería social aplicada - Mucho más fácil de lo que parece
 layout: post
 ---
 
