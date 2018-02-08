@@ -9,7 +9,7 @@ Tras dar esta charla varias veces me ha llama la atención el que haya suscitado
 
 Quería usar este post para dejar una referencia a la presentación, [Que podéis encontrar aquí](https://www.slideshare.net/cr0hn/ingeniera-social-aplicada-mucho-ms-fcil-de-lo-que-parece), y daros el listado completo del resumen que me hice en su día del libro de *Dale Carnigie* del que hablo en la charla.
 
-Tal y como he comentado, estas reglas hay que tomarlas con cuidado y **no usarlas al pie de la letra, ya que muchas de ellas son de dudosa ética su aplicación, rozando algunas de ellas el maltrato psicológico** (o, al menos, así lo veo yo).
+Tal y como he comentado, estas reglas hay que tomarlas con cuidado y **no usarlas al pie de la letra, ya que muchas de ellas son de dudosa ética, rozando el maltrato psicológico** (o, al menos, así lo veo yo).
 
 # Resumen de las reglas de Dale Carnigie 
 
