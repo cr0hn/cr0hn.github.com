@@ -52,4 +52,5 @@ Tal y como he comentado, estas reglas hay que tomarlas con cuidado y **no usarla
 - REGLA 26: Elogie el más pequeño progreso y, además, cada progreso. Sea "caluroso en su aprobación y generoso en sus elogios".
 - REGLA 27: Atribuya a la otra persona una buena reputación para que se interese en mantenerla.
 - REGLA 28: Aliente a la otra persona. Haga que los errores parezcan fáciles de corregir. REGLA 9: Procure que la otra persona se sienta satisfecha de hacer lo que usted sugiere.
+- REGLA 29: Procure que la otra persona se sienta satisfecha de hacer lo que usted sugiere.
     
